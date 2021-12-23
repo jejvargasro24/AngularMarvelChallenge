@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <h2>Your favorite comics:</h2>
+    <p *ngIf="comicsList.length===0">You haven't added any comic to favorites</p>
+  </div>
+
+  <div class="row" >
+    <div class="col-6" *ngFor="let comic of comicsList">
+      <app-comic-favorites-item [comic]="comic" (popComicEvent)='popComicFromList($event)'></app-comic-favorites-item>
+    </div>
+  </div>
+
+</div>
+
+

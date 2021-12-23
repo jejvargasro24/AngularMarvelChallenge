@@ -1,0 +1,13 @@
+<h1 mat-dialog-title>{{data.title}}</h1>
+<mat-dialog-content>
+  <div class="container">
+    <img src="{{data.thumbnail.path}}/portrait_uncanny.{{data.thumbnail.extension}}" alt="{{data.title}}'s photo">
+    <p>{{data.description}}</p>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-stroked-button color="warn" mat-dialog-close>Close</button>
+  <button *ngIf="!comicInFavorites" mat-raised-button color="primary" (click)="addToFavorites()">Add to favorites</button>
+  <button *ngIf="comicInFavorites" mat-raised-button color="warn" (click)="removeFromFavorites()">Remove from favorites</button>
+</mat-dialog-actions>
+

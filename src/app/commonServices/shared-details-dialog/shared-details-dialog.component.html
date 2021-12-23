@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>{{entity.title}}</h1>
+<mat-dialog-content>
+  <img *ngIf="entity.thumbnail" src="{{entity.thumbnail.path}}/portrait_uncanny.{{entity.thumbnail.extension}}" alt="{{entity.title}}'s photo">
+  <p *ngIf="template===1">Story type: {{entity.type}}</p>
+  <p *ngIf="template===2">Event start date: {{entity.start}}</p>
+  <p *ngIf="template===2">Event end date: {{entity.end}}</p>
+  <p *ngIf="template===3">Series rating:{{entity.rating}}</p>
+  <p>{{entity.description}}</p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-stroked-button color="warn" mat-dialog-close>Close</button>
+</mat-dialog-actions>

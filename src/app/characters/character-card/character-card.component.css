@@ -1,0 +1,11 @@
+.character-card {
+  max-width: 800px;
+}
+
+button.link { border:none; }
+button.custom-width {max-width: 100%; overflow-x: hidden; overflow-y: hidden; }
+.comic-list{
+  background-color: snow;
+  border-radius: 25px;
+
+}

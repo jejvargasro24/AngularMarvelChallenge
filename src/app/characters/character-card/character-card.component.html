@@ -1,0 +1,19 @@
+<mat-card class="character-card">
+  <img mat-card-image src="{{character.thumbnail.path}}.{{character.thumbnail.extension}}" alt="{{character.name}}'s photo">
+  <mat-card-header>
+    <mat-card-title><button mat-raised-button color="primary" (click)="openCharacterDetailsDialog()">{{character.name}}</button></mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      {{character.description}}
+    </p>
+    <div *ngIf="hasComics" class="container comic-list">
+      <h3>Popular comics:</h3>
+      <ul>
+        <li *ngFor="let comic of comicsList">
+          <button mat-stroked-button color="primary" class="custom-width link" (click)="getComicData(comic.name)">{{comic.name}}</button>
+        </li>
+      </ul>
+    </div>
+  </mat-card-content>
+</mat-card>

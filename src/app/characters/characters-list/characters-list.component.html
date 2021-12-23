@@ -1,0 +1,57 @@
+<div class="row">
+  <div class="col-md-6">
+    <mat-form-field class="width-100">
+      <mat-label>Order Characters By</mat-label>
+      <mat-select (valueChange)="orderCharacters($event)">
+        <mat-option *ngFor="let option of charactersOrderByOptions" [value]="option.id">
+          {{option.description}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="col-md-6">
+    <div class="row">
+      <div class="col-md-6">
+        <mat-form-field class="width-50">
+          <mat-label>Filter Characters By</mat-label>
+          <mat-select (valueChange)="SetFilterByParameter($event)">
+            <mat-option *ngFor="let option of charactersFilterByOptions" [value]="option.id">
+              {{option.description}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+
+
+    <div *ngIf="showFilterByTextInput" class="row">
+      <div class="col">
+        <mat-form-field  class="example-full-width">
+          <mat-label>{{filterByInputLabel}}</mat-label>
+          <input matInput [placeholder]="filterByInputLabel" [(ngModel)]="filterByTextValue">
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <!-- this is a bootstrap 4 button, change it to material style -->
+        <button type="button" class="btn btn-outline-info" (click)="FilterCharacters()">Filter</button>
+      </div>
+    </div>
+
+    <!-- <mat-form-field class="width-50">
+      <input matInput placeholder="kjnkjnk" [formControl]="myControl">
+    </mat-form-field> -->
+
+  </div>
+
+</div>
+
+<div class="row">
+  <div class="col-md-6" *ngFor="let character of charactersList">
+    <app-character-card [character]="character"></app-character-card>
+  </div>
+</div>
+
+<div class="row">
+  <mat-paginator [pageSize]="size" [pageIndex]="page" [length]="totalLength" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons (page)="changePageParameters($event)"></mat-paginator>
+</div>

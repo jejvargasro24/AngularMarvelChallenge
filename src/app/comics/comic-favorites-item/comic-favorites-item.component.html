@@ -1,0 +1,12 @@
+<!-- <mat-card class="comic-photo-card">
+  <mat-card-actions align="end">
+    <button mat-raised-button color="warn" (click)="popComicFromFavorites(comic.id)">X</button>
+  </mat-card-actions>
+  <img mat-card-image src="{{comic.thumbnail.path}}/portrait_medium.{{comic.thumbnail.extension}}" alt="{{comic.title}}'s photo">
+</mat-card> -->
+
+
+<div class="container">
+  <button type="button" class="btn btn-outline-danger btn-sm remove-button" (click)="popComicFromFavorites(comic.id)">X</button>
+  <img src="{{comic.thumbnail.path}}/portrait_medium.{{comic.thumbnail.extension}}" alt="{{comic.title}}'s photo">
+</div>
